@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dcarrascoT6.Views.vEstudiante"
+             Title="Estudiantes"
+             BackgroundColor="#E5E7EB">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+
+        <Label
+            Text="Estudiantes"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="#1F2937"
+            HorizontalTextAlignment="Center"
+            Margin="0,0,0,8" />
+
+        <Grid
+            ColumnDefinitions="0.8*,1.2*,1.2*,0.8*"
+            BackgroundColor="#4B5563"
+            Padding="10">
+
+            <Label
+                Text="Código"
+                FontAttributes="Bold"
+                TextColor="White"
+                Grid.Column="0" />
+
+            <Label
+                Text="Nombre"
+                FontAttributes="Bold"
+                TextColor="White"
+                Grid.Column="1" />
+
+            <Label
+                Text="Apellido"
+                FontAttributes="Bold"
+                TextColor="White"
+                Grid.Column="2" />
+
+            <Label
+                Text="Edad"
+                FontAttributes="Bold"
+                TextColor="White"
+                Grid.Column="3" />
+        </Grid>
+
+        <ListView
+            x:Name="listaEstudiantes"
+            HasUnevenRows="True"
+            SeparatorColor="#D1D5DB"
+            BackgroundColor="#F3F4F6"
+            ItemSelected="listaEstudiantes_ItemSelected">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                            ColumnDefinitions="0.8*,1.2*,1.2*,0.8*"
+                            Padding="10"
+                            BackgroundColor="#F3F4F6">
+
+                            <Label
+                                Text="{Binding codigo}"
+                                TextColor="#374151"
+                                VerticalTextAlignment="Center"
+                                Grid.Column="0" />
+
+                            <Label
+                                Text="{Binding nombre}"
+                                TextColor="#374151"
+                                VerticalTextAlignment="Center"
+                                Grid.Column="1" />
+
+                            <Label
+                                Text="{Binding apellido}"
+                                TextColor="#374151"
+                                VerticalTextAlignment="Center"
+                                Grid.Column="2" />
+
+                            <Label
+                                Text="{Binding edad}"
+                                TextColor="#374151"
+                                VerticalTextAlignment="Center"
+                                Grid.Column="3" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>
